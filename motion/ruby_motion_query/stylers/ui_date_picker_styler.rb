@@ -12,14 +12,31 @@ module RubyMotionQuery
    			count_down_timer: UIDatePickerModeCountDownTimer,
     	}
 
-    	def date_picker_mode=(value)
+		DATE_PICKER_STYLES = {
+			automatic: UIDatePickerStyleAutomatic,
+			compact: UIDatePickerStyleCompact,
+			# inline: UIDatePickerStyleInline,
+			wheels: UIDatePickerStyleWheels,
+
+		}
+
+		def date_picker_mode=(value)
     		@view.datePickerMode = DATE_PICKER_MODES[value] || value
     	end
 
       def date_picker_mode
       	@view.datePickerMode
       end
-    end
+
+	  def date_picker_style=(value)
+		@view.datePickerStyle = DATE_PICKER_STYLES[value] || value
+	  end
+
+	  def date_picker_style
+		@view.datePickerStyle
+	  end
+
+	end
 
   end
 end
